@@ -71,6 +71,8 @@ def get_eqtl_data(settings, snp, window=500000):
     header = subprocess.check_output("zcat {0} 2> /dev/null | head -n 1".format(eqtl_file), shell=True)
     raw_eqtls = subprocess.check_output("tabix {0} {1}:{2}-{3}".format(eqtl_file, \
             snp.chrom, snp.pos - window, snp.pos + window), shell=True)
+    raw_eqtls += subprocess.check_output("tabix chr{0} {1}:{2}-{3}".format(eqtl_file, \
+            snp.chrom, snp.pos - window, snp.pos + window), shell=True)
     eqtls = pd.read_csv(StringIO(header + raw_eqtls), sep="\t")
 
     if eqtls.shape[0] == 0:
