@@ -28,7 +28,7 @@ and the FINEMAP executable must be named `finemap`.
 GWAS and eQTL input files must be tab-delimited lists of SNPs, containing at least the following columns:
 
 * `chr`: Chromosome
-* `snp_pos`: Position of SNP in hg19
+* `snp_pos`: Position of SNP (the GWAS, eQTL, and LD reference VCF files must all be from the same build)
 * `alt`: Effect allele
 * `ref`: Non-effect allele
 * `beta`: Estimated effect size of the `alt` allele, when compared with the `ref` allele
