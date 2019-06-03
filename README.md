@@ -21,6 +21,9 @@ You will need to install [PLINK 1.9](https://www.cog-genomics.org/plink2) and [F
 Binary executables for these tools must be placed in the `/bin` directory. The PLINK executable must be named `plink`
 and the FINEMAP executable must be named `finemap`.
 
+IMPORTANT: The current pipeline works only with FINEMAP v1.1, which is not the latest version. In my next release of
+this pipeline, I do hope to make the scripts compatible regardless of which FINEMAP version is used.
+
 ### Preparing Input Files
 
 #### GWAS and eQTL summary statistics
